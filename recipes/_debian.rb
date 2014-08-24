@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: chefdk
-# Recipe:: default
+# Recipe:: _debian
 #
 # Copyright 2014, YOUR_COMPANY_NAME
 #
@@ -17,8 +17,15 @@
 # limitations under the License.
 #
 
-if platform_family?("rhel")
-  include_recipe "chefdk::_rhel"
-elsif platform_family?("debian")
-  include_recipe "chefdk::_debian"
+remote_file "/tmp/chefdk_0.2.0-2_amd64.deb" do
+  source node['chefdk']['download_url']
+  owner "root"
+  group "root"
+  mode "0644"
+end
+
+execute "install_chefdk" do
+  user "root"
+  command "dpkg -i /tmp/chefdk_0.2.0-2_amd64.deb"
+  creates "/opt/chefdk"
 end
