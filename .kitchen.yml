@@ -1,0 +1,22 @@
+---
+driver_plugin: digitalocean
+driver_config:
+  digitalocean_client_id: <%= ENV['DIGITALOCEAN_CLIENT_ID'] %>
+  digitalocean_api_key: <%= ENV['DIGITALOCEAN_API_KEY'] %>
+  ssh_key: <%= ENV['DIGITALOCEAN_SSH_KEY_PATH'] %>
+  ssh_key_ids: <%= ENV['DIGITALOCEAN_SSH_KEY_IDS'] %>
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: centos-6.5
+    driver_plugin: digitalocean
+    driver_config:
+      image_id: 3448641
+
+suites:
+  - name: default
+    run_list:
+      - recipe[chefdk::default]
+    attributes: {}
