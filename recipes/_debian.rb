@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-remote_file "/tmp/chefdk_0.2.0-2_amd64.deb" do
+remote_file "/tmp/chefdk_#{node['chefdk']['version']}_amd64.deb" do
   source node['chefdk']['download_url']
   owner "root"
   group "root"
@@ -26,6 +26,6 @@ end
 
 execute "install_chefdk" do
   user "root"
-  command "dpkg -i /tmp/chefdk_0.2.0-2_amd64.deb"
+  command "dpkg -i /tmp/chefdk_#{node['chefdk']['version']}_amd64.deb"
   creates "/opt/chefdk"
 end

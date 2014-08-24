@@ -1,45 +1,22 @@
 chefdk Cookbook
 ===============
-TODO: Enter the cookbook description here.
-
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+This cookbook installs ChefDK(Chef Development Kit).
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
-
-e.g.
-#### packages
-- `toaster` - chefdk needs toaster to brown your bagel.
+#### platforms
+CentOS 6.5 and Ubuntu 12.04 LTS are supported and tested.
 
 Attributes
 ----------
-TODO: List your cookbook attributes here.
 
-e.g.
 #### chefdk::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['chefdk']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+- `['chefdk']['version']`
+- `['chefdk']['download_url']`
 
 Usage
 -----
 #### chefdk::default
-TODO: Write usage instructions for each cookbook.
-
-e.g.
 Just include `chefdk` in your node's `run_list`:
 
 ```json
@@ -65,4 +42,20 @@ e.g.
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+- Author:: Koji Tanaka (<kj.tanaka@gmail.com>)
+
+```text
+Copyright 2014, FutureGrid, Indiana Univercity
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```

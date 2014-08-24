@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-remote_file "/tmp/chefdk-0.2.0-2.el6.x86_64.rpm" do
+remote_file "/tmp/chefdk-#{node['chefdk']['version']}.el6.x86_64.rpm" do
   source node['chefdk']['download_url']
   owner "root"
   group "root"
@@ -26,6 +26,6 @@ end
 
 execute "install_chefdk" do
   user "root"
-  command "rpm -ivh /tmp/chefdk-0.2.0-2.el6.x86_64.rpm"
+  command "rpm -ivh /tmp/chefdk-#{node['chefdk']['version']}.el6.x86_64.rpm"
   creates "/opt/chefdk"
 end
